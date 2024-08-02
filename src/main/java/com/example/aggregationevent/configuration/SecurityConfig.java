@@ -36,6 +36,9 @@ public class SecurityConfig {
                     .requestMatchers(HttpMethod.GET, "/api/v1/events").hasAuthority("USER")
                     .requestMatchers(HttpMethod.POST, "/api/v1/users/user").hasAuthority("ADMIN")
                     .requestMatchers(HttpMethod.POST, "/api/v1/events/event").hasAuthority("EVENT MANAGER")
+                    .requestMatchers(HttpMethod.PATCH, "/api/v1/events/{id}").hasAuthority("EVENT MANAGER")
+                    .requestMatchers(HttpMethod.GET, "/api/v1/users/**").hasAuthority("ADMIN")
+                    .requestMatchers(HttpMethod.DELETE, "/api/v1/users/{id}").hasAuthority("ADMIN")
                     .anyRequest().authenticated();
         }) .httpBasic(Customizer.withDefaults());
         return httpSecurity.build();
