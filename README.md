@@ -4,7 +4,7 @@ This is a project about aggregation event, meaning is a process where users are 
 Users with different roles have access to manipulate the program. All of them can do something except a user
 with "GUEST" role.
 
-Every change is made through postman using the specific url.
+Every change is made through postman using a unique url.
 
 Please make sure to change everything what's needed in application.properties before starting the application.
 Also don't forget to comment everything about security config because in this application, people with specific roles can do specific actions.
